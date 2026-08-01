@@ -1,0 +1,1283 @@
+/*==================================================
+    MESH DIGITAL CONCIERGE
+    PART 1 OF 4
+==================================================*/
+
+/*==================================================
+    CONTAINER
+==================================================*/
+
+.mesh-concierge{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    z-index:9999;
+
+    font-family:Inter,Segoe UI,Roboto,sans-serif;
+
+}
+
+/*==================================================
+    FLOATING BUTTON
+==================================================*/
+
+.mesh-toggle{
+
+    width:70px;
+
+    height:70px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        135deg,
+        var(--secondary),
+        #FF9A3D
+    );
+
+    color:var(--white);
+
+    font-size:26px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:
+        0 18px 45px rgba(245,130,50,.35);
+
+    transition:var(--transition);
+
+}
+
+.mesh-toggle:hover{
+
+    transform:translateY(-6px) scale(1.05);
+
+    box-shadow:
+        0 25px 55px rgba(245,130,50,.45);
+
+}
+
+.mesh-toggle:active{
+
+    transform:scale(.96);
+
+}
+
+/*==================================================
+    CONCIERGE WINDOW
+==================================================*/
+
+.mesh-chat{
+
+    position:absolute;
+
+    right:0;
+
+    bottom:80px;
+
+    width:390px;
+
+    height:600px;
+
+    background:var(--white);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    box-shadow:
+
+        0 30px 80px rgba(0,0,0,.18);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:
+
+        translateY(20px)
+
+        scale(.96);
+
+    transition:var(--transition);
+
+}
+
+.mesh-chat.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:
+
+        translateY(0)
+
+        scale(1);
+
+}
+
+/*==================================================
+    HEADER
+==================================================*/
+
+.mesh-header{
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            var(--primary),
+
+            #1E4D7F
+
+        );
+
+    color:var(--white);
+
+    padding:22px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+/*==================================================
+    BRAND
+==================================================*/
+
+.mesh-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.mesh-logo{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:16px;
+
+    background:
+
+        rgba(255,255,255,.12);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    backdrop-filter:blur(12px);
+
+}
+
+.mesh-brand h3{
+
+    margin:0;
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+.mesh-brand span{
+
+    display:block;
+
+    margin-top:4px;
+
+    font-size:13px;
+
+    opacity:.85;
+
+    letter-spacing:.2px;
+
+}
+
+/*==================================================
+    CLOSE BUTTON
+==================================================*/
+
+.mesh-close{
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:
+
+        rgba(255,255,255,.12);
+
+    color:var(--white);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:var(--transition);
+
+}
+
+.mesh-close:hover{
+
+    background:
+
+        rgba(255,255,255,.25);
+
+    transform:rotate(90deg);
+
+}
+
+/*==================================================
+    MAIN SCREEN
+==================================================*/
+
+.mesh-screen{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    background:var(--light);
+
+    padding:25px;
+
+}
+
+/*==================================================
+    SCROLLBAR
+==================================================*/
+
+.mesh-screen::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.mesh-screen::-webkit-scrollbar-track{
+
+    background:#EEF2F7;
+
+}
+
+.mesh-screen::-webkit-scrollbar-thumb{
+
+    background:#D1D5DB;
+
+    border-radius:20px;
+
+}
+
+.mesh-screen::-webkit-scrollbar-thumb:hover{
+
+    background:var(--secondary);
+
+}
+
+/*==================================================
+    PART 2 OF 4
+    WELCOME SCREEN
+==================================================*/
+
+.mesh-welcome{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.mesh-hero{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #1F4F84
+    );
+
+    color:var(--white);
+
+    border-radius:24px;
+
+    padding:28px 28px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+}
+
+.mesh-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+
+    height:100px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+    top:-80px;
+
+    right:-80px;
+
+}
+
+.mesh-hero-icon{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.12);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:30px;
+
+    margin-bottom:22px;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.mesh-hero h2{
+
+    margin:0 0 12px;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    line-height:1.25;
+
+}
+
+.mesh-hero p{
+
+    margin:0;
+
+    opacity:.92;
+
+    line-height:1.7;
+
+    font-size:12px;
+
+}
+
+/*==================================================
+    SERVICE LIST
+==================================================*/
+
+.mesh-service-list{
+
+    display:grid;
+
+    gap:16px;
+
+}
+
+/*==================================================
+    SERVICE CARD
+==================================================*/
+
+.mesh-service{
+
+    width:100%;
+
+    border:none;
+
+    background:var(--white);
+
+    border-radius:20px;
+
+    padding:22px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    text-align:left;
+
+    transition:var(--transition);
+
+    box-shadow:
+
+        0 12px 30px rgba(0,0,0,.05);
+
+}
+
+.mesh-service:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+        0 24px 45px rgba(0,0,0,.10);
+
+}
+
+.mesh-service-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.mesh-service-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:18px;
+
+    background:#F3F7FB;
+
+    color:var(--secondary);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:24px;
+
+    transition:var(--transition);
+
+}
+
+.mesh-service:hover .mesh-service-icon{
+
+    background:var(--secondary);
+
+    color:var(--white);
+
+    transform:rotate(-8deg);
+
+}
+
+.mesh-service-title{
+
+    display:block;
+
+    color:var(--primary);
+
+    font-size:18px;
+
+    font-weight:700;
+
+    margin-bottom:4px;
+
+}
+
+.mesh-service-text{
+
+    display:block;
+
+    color:var(--gray);
+
+    font-size:14px;
+
+    line-height:1.5;
+
+}
+
+/*==================================================
+    ARROW
+==================================================*/
+
+.mesh-arrow{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:#F4F6F8;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:var(--primary);
+
+    transition:var(--transition);
+
+}
+
+.mesh-service:hover .mesh-arrow{
+
+    background:var(--secondary);
+
+    color:var(--white);
+
+    transform:translateX(6px);
+
+}
+
+/*==================================================
+    PART 3 OF 4
+    NAVIGATION • CONTENT • CTA
+==================================================*/
+
+/*==================================================
+    TOP NAVIGATION
+==================================================*/
+
+.mesh-nav{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:24px;
+
+}
+
+.mesh-nav-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.mesh-nav-btn{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    background:var(--white);
+
+    color:var(--primary);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.05);
+
+    transition:var(--transition);
+
+}
+
+.mesh-nav-btn:hover{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+/*==================================================
+    BREADCRUMB
+==================================================*/
+
+.mesh-breadcrumb{
+
+    font-size:13px;
+
+    color:var(--gray);
+
+    font-weight:600;
+
+}
+
+.mesh-breadcrumb span{
+
+    color:var(--primary);
+
+}
+
+/*==================================================
+    SECTION TITLE
+==================================================*/
+
+.mesh-section{
+
+    margin-bottom:24px;
+
+}
+
+.mesh-section h2{
+
+    margin:0 0 8px;
+
+    color:var(--primary);
+
+    font-size:26px;
+
+    font-weight:700;
+
+}
+
+.mesh-section p{
+
+    margin:0;
+
+    color:var(--gray);
+
+    line-height:1.7;
+
+    font-size:15px;
+
+}
+
+/*==================================================
+    INFORMATION CARD
+==================================================*/
+
+.mesh-card{
+
+    background:var(--white);
+
+    border-radius:22px;
+
+    padding:24px;
+
+    margin-bottom:20px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.05);
+
+}
+
+.mesh-card h3{
+
+    margin:0 0 12px;
+
+    color:var(--primary);
+
+    font-size:20px;
+
+}
+
+.mesh-card p{
+
+    margin:0;
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}
+
+/*==================================================
+    DIVIDER
+==================================================*/
+
+.mesh-divider{
+
+    height:1px;
+
+    background:var(--border);
+
+    margin:28px 0;
+
+}
+
+/*==================================================
+    FEATURE LIST
+==================================================*/
+
+.mesh-list{
+
+    display:grid;
+
+    gap:14px;
+
+}
+
+.mesh-list-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:14px;
+
+}
+
+.mesh-list-item i{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:12px;
+
+    background:#F3F7FB;
+
+    color:var(--secondary);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+}
+
+.mesh-list-item strong{
+
+    display:block;
+
+    color:var(--primary);
+
+    margin-bottom:4px;
+
+}
+
+.mesh-list-item span{
+
+    color:var(--gray);
+
+    line-height:1.6;
+
+}
+
+/*==================================================
+    CALL TO ACTION PANEL
+==================================================*/
+
+.mesh-cta{
+
+    margin-top:24px;
+
+    border-radius:22px;
+
+    padding:28px;
+
+    background:linear-gradient(
+        135deg,
+        var(--secondary),
+        #FF9A3D
+    );
+
+    color:var(--white);
+
+    box-shadow:0 18px 45px rgba(245,130,50,.25);
+
+}
+
+.mesh-cta h3{
+
+    margin:0 0 12px;
+
+    font-size:22px;
+
+}
+
+.mesh-cta p{
+
+    margin:0 0 24px;
+
+    line-height:1.7;
+
+    opacity:.95;
+
+}
+
+.mesh-cta-btn{
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:14px 22px;
+
+    cursor:pointer;
+
+    background:var(--white);
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.mesh-cta-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/*==================================================
+    FADE ANIMATION
+==================================================*/
+
+.mesh-fade{
+
+    animation:meshFade .35s ease;
+
+}
+
+@keyframes meshFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==================================================
+    PART 4 OF 4
+    FORMS • CHAT • FOOTER • MOBILE
+==================================================*/
+
+/*==================================================
+    FORM
+==================================================*/
+
+.mesh-form{
+
+    display:grid;
+
+    gap:18px;
+
+}
+
+.mesh-group{
+
+    display:grid;
+
+    gap:8px;
+
+}
+
+.mesh-group label{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:var(--primary);
+
+}
+
+.mesh-input,
+.mesh-select,
+.mesh-textarea{
+
+    width:100%;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    background:var(--white);
+
+    padding:15px 18px;
+
+    font-size:15px;
+
+    color:var(--dark);
+
+    outline:none;
+
+    transition:var(--transition);
+
+    font-family:inherit;
+
+}
+
+.mesh-textarea{
+
+    resize:vertical;
+
+    min-height:130px;
+
+}
+
+.mesh-input:focus,
+.mesh-select:focus,
+.mesh-textarea:focus{
+
+    border-color:var(--secondary);
+
+    box-shadow:0 0 0 4px rgba(245,130,50,.15);
+
+}
+
+/*==================================================
+    BUTTONS
+==================================================*/
+
+.mesh-btn{
+
+    border:none;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    padding:16px 24px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.mesh-btn-primary{
+
+    background:var(--secondary);
+
+    color:var(--white);
+
+}
+
+.mesh-btn-primary:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(245,130,50,.30);
+
+}
+
+.mesh-btn-secondary{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+.mesh-btn-secondary:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/*==================================================
+    MESSAGE BUBBLES
+==================================================*/
+
+.mesh-message{
+
+    max-width:88%;
+
+    padding:16px 18px;
+
+    border-radius:20px;
+
+    margin-bottom:14px;
+
+    line-height:1.7;
+
+    animation:meshFade .35s ease;
+
+}
+
+.mesh-message.bot{
+
+    background:var(--white);
+
+    color:var(--dark);
+
+    border-top-left-radius:6px;
+
+    box-shadow:0 10px 24px rgba(0,0,0,.05);
+
+}
+
+.mesh-message.user{
+
+    margin-left:auto;
+
+    background:var(--secondary);
+
+    color:var(--white);
+
+    border-top-right-radius:6px;
+
+}
+
+/*==================================================
+    TYPING INDICATOR
+==================================================*/
+
+.mesh-typing{
+
+    display:flex;
+
+    gap:8px;
+
+    padding:16px;
+
+    width:max-content;
+
+    border-radius:18px;
+
+    background:var(--white);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.05);
+
+}
+
+.mesh-typing span{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#C8CDD4;
+
+    animation:typing 1.2s infinite;
+
+}
+
+.mesh-typing span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.mesh-typing span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+@keyframes typing{
+
+    0%{
+
+        transform:translateY(0);
+
+        opacity:.4;
+
+    }
+
+    50%{
+
+        transform:translateY(-5px);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+        opacity:.4;
+
+    }
+
+}
+
+/*==================================================
+    FOOTER
+==================================================*/
+
+.mesh-footer{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+
+    padding:18px;
+
+    background:var(--white);
+
+    border-top:1px solid var(--border);
+
+}
+
+.footer-btn{
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:14px;
+
+    background:#F4F6F9;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    transition:var(--transition);
+
+}
+
+.footer-btn:hover{
+
+    background:var(--secondary);
+
+    color:var(--white);
+
+}
+
+/*==================================================
+    MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+    .mesh-concierge{
+
+        right:18px;
+
+        bottom:18px;
+
+    }
+
+    .mesh-chat{
+
+        width:calc(100vw - 30px);
+
+        height:82vh;
+
+        right:-8px;
+
+        bottom:88px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .mesh-header{
+
+        padding:18px;
+
+    }
+
+    .mesh-screen{
+
+        padding:20px;
+
+    }
+
+    .mesh-brand h3{
+
+        font-size:18px;
+
+    }
+
+    .mesh-service{
+
+        padding:18px;
+
+    }
+
+    .mesh-service-title{
+
+        font-size:17px;
+
+    }
+
+}

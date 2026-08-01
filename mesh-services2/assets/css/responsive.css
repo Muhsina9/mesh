@@ -1,0 +1,287 @@
+/*==========================================
+    PROCESS
+==========================================*/
+
+@media (max-width:991px){
+
+.process-wrapper{
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:70px;
+
+}
+
+.process-line{
+
+    width:4px;
+
+    height:100%;
+
+    top:0;
+
+    bottom:0;
+
+    left:50%;
+
+    right:auto;
+
+    transform:translateX(-50%);
+
+}
+
+.process-step{
+
+    max-width:320px;
+
+}
+
+}
+
+/*=========================
+    SOLUTIONS
+==========================*/
+
+@media(max-width:992px){
+
+    .solution-showcase{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+    .solution-details{
+
+        max-width:100%;
+
+    }
+
+    .solution-image img{
+
+        height:500px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .solution-details h3{
+
+        font-size:34px;
+
+    }
+
+    .solution-image img{
+
+        height:400px;
+
+    }
+
+}
+
+/*==================================================
+    INDUSTRIES
+==================================================*/
+
+@media(max-width:992px){
+
+    .industry-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .industry-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/*==================================================
+    WHY MESH
+==================================================*/
+
+@media(max-width:992px){
+
+    .why-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .why-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/*==================================================
+    CLIENTS
+==================================================*/
+
+@media(max-width:992px){
+
+    .client-slider{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .client-slider{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/*==================================================
+    FAQ
+==================================================*/
+
+@media(max-width:768px){
+
+.faq-question{
+
+padding:22px;
+
+}
+
+.faq-question span{
+
+font-size:18px;
+
+}
+
+.faq-answer p{
+
+padding:0 22px 25px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.cta-box{
+
+padding:60px 30px;
+
+}
+
+.cta-box h2{
+
+font-size:36px;
+
+}
+
+.cta-box p{
+
+font-size:17px;
+
+}
+
+}
+
+@media(max-width:992px){
+
+.footer-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.footer-bottom{
+
+flex-direction:column;
+
+gap:20px;
+
+text-align:center;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.concierge-message{
+
+display:none;
+
+}
+
+.mesh-concierge{
+
+right:20px;
+
+bottom:20px;
+
+}
+
+.concierge-button{
+
+width:60px;
+
+height:60px;
+
+font-size:30px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.concierge-window{
+
+width:330px;
+
+right:-10px;
+
+}
+
+}
+
+@media(max-width:450px){
+
+.concierge-window{
+
+width:calc(100vw - 30px);
+
+right:-10px;
+
+}
+
+}
